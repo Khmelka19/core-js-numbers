@@ -250,6 +250,7 @@ function getCube(num) {
  */
 function getFibonacciNumber(/* index */) {
   throw new Error('Not implemented');
+  /* return index <= 1 ? index : getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2); */
 }
 
 /**
@@ -278,8 +279,11 @@ function getSumToN(/* n */) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  return String(num)
+    .split('')
+    .map(Number)
+    .reduce((sum, a) => sum + a, 0);
 }
 
 /**
